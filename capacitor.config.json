@@ -1,0 +1,10 @@
+{
+  "appId": "com.ulufa.chatapp",
+  "appName": "Ulufa Chat",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://ulufa.ge/public/chat-app/",
+    "cleartext": true
+  }
+}

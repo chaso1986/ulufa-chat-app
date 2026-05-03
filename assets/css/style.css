@@ -1,0 +1,112 @@
+body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* შეტყობინებების სტილი */
+#chat_box { height: 100%; }
+.message {
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 18px;
+    max-width: 75%;
+    position: relative;
+    font-size: 15px;
+    word-wrap: break-word;
+}
+.sent {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+.received {
+    background-color: #e4e6eb;
+    color: black;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+/* უზრუნველყოფს, რომ ჰედერი ყოველთვის ერთ ხაზზე იყოს */
+.border-bottom.d-flex {
+    flex-wrap: nowrap !important;
+}
+
+/* წაუკითხავი შეტყობინების ბეიჯის სტილი */
+.badge.bg-danger {
+    font-size: 0.75rem;
+    padding: 0.4em 0.6em;
+}
+
+#image-preview-container {
+    max-width: 100%;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#image-preview {
+    max-width: 100%; /* რომ არ გასცდეს კონტეინერს */
+    height: auto;
+    object-fit: contain;
+}
+
+.reaction-badge {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+    border: 1px solid #eee;
+    z-index: 10;
+}
+.message.sent .reaction-badge {
+    right: auto;
+    left: 10px;
+}
+
+/* მობილურისთვის სიდებარის ზომის ოპტიმიზაცია */
+@media (max-width: 768px) {
+    .container-fluid, .row {
+        overflow-x: hidden;
+    }
+}
+
+.msg-actions {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.message:hover .msg-actions {
+    opacity: 1;
+}
+/* მობილურისთვის, რადგან ჰოვერი არ გვაქვს */
+@media (max-width: 768px) {
+    .msg-actions { opacity: 0.5; }
+}
+.sent .msg-actions { color: #fff; }
+.received .msg-actions { color: #6b7280; }
+
+/* მობილურის ოპტიმიზაცია */
+@media (max-width: 768px) {
+    .col-md-4.border-end { /* სიდებარი */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        transition: 0.3s;
+    }
+    .chat-hidden { transform: translateX(-100%); } /* სიდებარის დამალვა */
+    
+    #main_chat_area {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .chat-hidden {
+        display: none !important;
+    }
+}
+
+/* მომხმარებლების სია */
+.user-item:hover { background-color: #f5f5f5; }
+.user-item.active { background-color: #e7f3ff; }
