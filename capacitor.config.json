@@ -1,10 +1,9 @@
 {
-  "appId": "com.ulufa.chatapp",
+  "appId": "io.ionic.starter",
   "appName": "Ulufa Chat",
   "webDir": "public",
-  "bundledWebRuntime": false,
   "server": {
-    "url": "https://ulufa.ge/public/chat-app/",
+    "url": "https://ulufa.ge/public/chat-app/chat/",
     "cleartext": true
   }
 }
